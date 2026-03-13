@@ -13,7 +13,7 @@ describe('Login Feature', () => {
     cy.get('input[placeholder="Email"]').type('salah@gmail.com');
     cy.get('input[placeholder="Password"]').type('salahpassword');
     cy.get('button[type="submit"]').click();
-    
+
     // API Dicoding akan mengembalikan error 400/401 dan memicu window.alert
     cy.on('window:alert', (text) => {
       expect(text).to.contains('email or password is wrong');

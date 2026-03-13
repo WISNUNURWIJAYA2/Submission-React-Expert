@@ -4,7 +4,6 @@ import store from './index';
 
 describe('authUser reducer', () => {
   it('should return the authUser when given by setAuthUser action', () => {
-    const initialState = null;
     const action = setAuthUser({ id: 1, name: 'Wisnu' });
     store.dispatch(action);
     expect(store.getState().authUser).toEqual({ id: 1, name: 'Wisnu' });
