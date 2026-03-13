@@ -7,7 +7,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import googleConfig from 'eslint-config-google';
 
 export default [
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'cypress/**', 'cypress.config.js'] },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
