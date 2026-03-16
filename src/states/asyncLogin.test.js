@@ -14,13 +14,13 @@ describe('asyncLogin thunk', () => {
   it('should dispatch action correctly when data fetching success', async () => {
     const fakeToken = 'fake-token';
     const fakeUser = { id: 1, name: 'Wisnu' };
-    
+
     api.login.mockResolvedValue(fakeToken);
     api.getOwnProfile.mockResolvedValue(fakeUser);
-    
+
     const dispatch = vi.fn();
     await asyncLogin({ email: 'test@test.com', password: 'password' })(dispatch);
-    
+
     expect(dispatch).toHaveBeenCalled();
     expect(api.putAccessToken).toHaveBeenCalledWith(fakeToken);
   });
